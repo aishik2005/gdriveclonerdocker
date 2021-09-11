@@ -14,8 +14,8 @@ RUN apt-get -y update && apt-get -y upgrade && \
         libpthread-stubs0-dev zlib1g-dev
         
 # Installing Mega SDK Python Binding
-ENV MEGA_SDK_VERSION="3.9.4"
-RUN git clone https://github.com/meganz/sdk.git --depth=1 -b v$MEGA_SDK_VERSION ~/home/sdk \
+# ENV MEGA_SDK_VERSION="3.9.4"
+#RUN git clone https://github.com/meganz/sdk.git --depth=1 -b v$MEGA_SDK_VERSION ~/home/sdk \
     && cd ~/home/sdk && rm -rf .git \
     && autoupdate -fIv && ./autogen.sh \
     && ./configure --disable-silent-rules --enable-python --with-sodium --disable-examples \
